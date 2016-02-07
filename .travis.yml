@@ -1,10 +1,13 @@
 language: objective-c
 osx_image: xcode7.2
-xcode_project: Palette.xcodeproj
+xcode_project: Mixer.xcodeproj
 
 branches:
   only:
     - master
+
+before_install:
+  - pip install codecov
 
 env:
   matrix:
@@ -27,10 +30,10 @@ before_script:
 script: ./bin/test
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+  - codecov
 
 skip_cleanup: true
 
 before_deploy:
     - carthage build --no-skip-current
-    - carthage archive Palette
+    - carthage archive Mixer
