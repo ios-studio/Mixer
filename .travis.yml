@@ -6,9 +6,6 @@ branches:
   only:
     - master
 
-before_install:
-  - pip install codecov
-
 env:
   matrix:
       - DESTINATION="OS=9.2,name=iPad 2"
@@ -30,7 +27,7 @@ before_script:
 script: ./bin/test
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 
 skip_cleanup: true
 
