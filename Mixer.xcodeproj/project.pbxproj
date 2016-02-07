@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		53ACBF0F1C67AF8B0031AA49 /* Mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ACBF041C67AF8B0031AA49 /* Mixer.framework */; };
 		53ACBF241C67B12A0031AA49 /* Colors.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF1F1C67B12A0031AA49 /* Colors.csv */; };
-		53ACBF251C67B12A0031AA49 /* IncorrectRGBChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF201C67B12A0031AA49 /* IncorrectRGBChannelValues.csv */; };
+		53ACBF251C67B12A0031AA49 /* InvalidRGBChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF201C67B12A0031AA49 /* InvalidRGBChannelValues.csv */; };
 		53ACBF261C67B12A0031AA49 /* CorruptFile.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF211C67B12A0031AA49 /* CorruptFile.csv */; };
 		53ACBF271C67B12A0031AA49 /* CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF221C67B12A0031AA49 /* CSV.csv */; };
 		53ACBF281C67B12A0031AA49 /* MissingHeader.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF231C67B12A0031AA49 /* MissingHeader.csv */; };
@@ -24,7 +24,7 @@
 		53ACBF3A1C67B1450031AA49 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACBF391C67B1450031AA49 /* CSV.swift */; };
 		53ACBF3D1C67B1620031AA49 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53ACBF3C1C67B1620031AA49 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53ACBF3E1C67B16F0031AA49 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ACBF3C1C67B1620031AA49 /* Nimble.framework */; };
-		53ACBF431C67D8CE0031AA49 /* IncorrectAlphaChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF421C67D8CE0031AA49 /* IncorrectAlphaChannelValues.csv */; };
+		53ACBF431C67D8CE0031AA49 /* InvalidAlphaChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF421C67D8CE0031AA49 /* InvalidAlphaChannelValues.csv */; };
 		53ACBF451C67D94F0031AA49 /* MissingRGBChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF441C67D94F0031AA49 /* MissingRGBChannelValues.csv */; };
 		53ACBF471C67D9910031AA49 /* MissingAlphaChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF461C67D9910031AA49 /* MissingAlphaChannelValues.csv */; };
 		53ACBF491C67D9E10031AA49 /* NonFloatAlphaChannelValues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53ACBF481C67D9E10031AA49 /* NonFloatAlphaChannelValues.csv */; };
@@ -60,7 +60,7 @@
 		53ACBF0E1C67AF8B0031AA49 /* MixerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53ACBF151C67AF8B0031AA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53ACBF1F1C67B12A0031AA49 /* Colors.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.csv; sourceTree = "<group>"; };
-		53ACBF201C67B12A0031AA49 /* IncorrectRGBChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncorrectRGBChannelValues.csv; sourceTree = "<group>"; };
+		53ACBF201C67B12A0031AA49 /* InvalidRGBChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InvalidRGBChannelValues.csv; sourceTree = "<group>"; };
 		53ACBF211C67B12A0031AA49 /* CorruptFile.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CorruptFile.csv; sourceTree = "<group>"; };
 		53ACBF221C67B12A0031AA49 /* CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSV.csv; sourceTree = "<group>"; };
 		53ACBF231C67B12A0031AA49 /* MissingHeader.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MissingHeader.csv; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		53ACBF341C67B1410031AA49 /* MixerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerConfiguration.swift; sourceTree = "<group>"; };
 		53ACBF391C67B1450031AA49 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		53ACBF3C1C67B1620031AA49 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		53ACBF421C67D8CE0031AA49 /* IncorrectAlphaChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncorrectAlphaChannelValues.csv; sourceTree = "<group>"; };
+		53ACBF421C67D8CE0031AA49 /* InvalidAlphaChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InvalidAlphaChannelValues.csv; sourceTree = "<group>"; };
 		53ACBF441C67D94F0031AA49 /* MissingRGBChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MissingRGBChannelValues.csv; sourceTree = "<group>"; };
 		53ACBF461C67D9910031AA49 /* MissingAlphaChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MissingAlphaChannelValues.csv; sourceTree = "<group>"; };
 		53ACBF481C67D9E10031AA49 /* NonFloatAlphaChannelValues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NonFloatAlphaChannelValues.csv; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 				53ACBF481C67D9E10031AA49 /* NonFloatAlphaChannelValues.csv */,
 				53ACBF461C67D9910031AA49 /* MissingAlphaChannelValues.csv */,
 				53ACBF441C67D94F0031AA49 /* MissingRGBChannelValues.csv */,
-				53ACBF421C67D8CE0031AA49 /* IncorrectAlphaChannelValues.csv */,
-				53ACBF201C67B12A0031AA49 /* IncorrectRGBChannelValues.csv */,
+				53ACBF421C67D8CE0031AA49 /* InvalidAlphaChannelValues.csv */,
+				53ACBF201C67B12A0031AA49 /* InvalidRGBChannelValues.csv */,
 				53ACBF211C67B12A0031AA49 /* CorruptFile.csv */,
 				53ACBF221C67B12A0031AA49 /* CSV.csv */,
 				53ACBF231C67B12A0031AA49 /* MissingHeader.csv */,
@@ -263,11 +263,11 @@
 			files = (
 				53ACBF471C67D9910031AA49 /* MissingAlphaChannelValues.csv in Resources */,
 				53ACBF281C67B12A0031AA49 /* MissingHeader.csv in Resources */,
-				53ACBF251C67B12A0031AA49 /* IncorrectRGBChannelValues.csv in Resources */,
+				53ACBF251C67B12A0031AA49 /* InvalidRGBChannelValues.csv in Resources */,
 				53ACBF271C67B12A0031AA49 /* CSV.csv in Resources */,
 				53ACBF451C67D94F0031AA49 /* MissingRGBChannelValues.csv in Resources */,
 				53ACBF4B1C67DA310031AA49 /* NonIntegerRGBChannelValues.csv in Resources */,
-				53ACBF431C67D8CE0031AA49 /* IncorrectAlphaChannelValues.csv in Resources */,
+				53ACBF431C67D8CE0031AA49 /* InvalidAlphaChannelValues.csv in Resources */,
 				53ACBF261C67B12A0031AA49 /* CorruptFile.csv in Resources */,
 				53ACBF241C67B12A0031AA49 /* Colors.csv in Resources */,
 				53ACBF491C67D9E10031AA49 /* NonFloatAlphaChannelValues.csv in Resources */,

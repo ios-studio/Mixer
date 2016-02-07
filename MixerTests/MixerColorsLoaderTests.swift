@@ -91,13 +91,13 @@ class MixerColorsLoaderTests: XCTestCase {
         expect(colors).to(beNil())
     }
     
-    func testWithIncorrectRGBChannelValuesCSV() {
-        let colors = MixerColorsLoader(path: csvPath("IncorrectRGBChannelValues")).load()
+    func testWithInvalidRGBChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("InvalidRGBChannelValues")).load()
         expect(colors).to(beNil())
     }
     
-    func testWithIncorrectAlphaChannelValuesCSV() {
-        let colors = MixerColorsLoader(path: csvPath("IncorrectAlphaChannelValues")).load()
+    func testWithInvalidAlphaChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("InvalidAlphaChannelValues")).load()
         expect(colors).to(beNil())
     }
     
