@@ -70,8 +70,39 @@ class MixerColorsLoaderTests: XCTestCase {
         expect(colors).to(beNil())
     }
     
-    func testWithCorruptCSV() {
-        let colors = MixerColorsLoader(path: csvPath("CorruptColors")).load()
+    func testWithMissingRGBChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("MissingRGBChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    
+    func testWithMissingAlphaChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("MissingAlphaChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    func testWithNonIntegerRGBChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("NonIntegerRGBChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    func testWithNonFloatAlphaChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("NonFloatAlphaChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    func testWithIncorrectRGBChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("IncorrectRGBChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    func testWithIncorrectAlphaChannelValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("IncorrectAlphaChannelValues")).load()
+        expect(colors).to(beNil())
+    }
+    
+    func testWithIncorrectValuesCSV() {
+        let colors = MixerColorsLoader(path: csvPath("IncorrectValues")).load()
         expect(colors).to(beNil())
     }
     

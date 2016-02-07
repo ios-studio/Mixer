@@ -38,6 +38,11 @@ class MixerTests: XCTestCase {
         expect(convenienceMixer.hasColors).to(beTrue())
     }
     
+    func testConvenienceInitWithMissingFile() {
+        let convenienceMixer = Mixer(bundle: NSBundle())
+        expect(convenienceMixer.hasColors).to(beFalse())
+    }
+    
     func testConvenienceInitPerformance() {
         self.measureBlock {
             for _ in 1..<10000 {
