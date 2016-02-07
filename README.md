@@ -32,7 +32,7 @@ enum Color: String, MixerColor {
 
 ```
 
-Where `"Blue"` corresponds to the name of a color in the font file.
+Where `"Blue"` corresponds to the name of a color in the csv file.
 
 ## Configuring
 Mixer can be passed a `MixerConfiguration` object where you can specify another path to your colors file.
