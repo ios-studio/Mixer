@@ -29,15 +29,15 @@ internal class CSV {
         
         let headers = lines[0].componentsSeparatedByCharactersInSet(CSV.delimiter)
         self.headers = headers
-        self.rows = Array(lines)[1..<lines.count].reduce([[String: String]]()) { (var allRows, line) in
-            
+        self.rows = Array(lines)[1..<lines.count].reduce([[String: String]]()) { allRows, line in
+            var newRows = allRows
             var row = [String: String]()
             for (key, value) in zip(headers, line.componentsSeparatedByCharactersInSet(CSV.delimiter)) {
                 row[key] = value
             }
             
-            allRows.append(row)
-            return allRows
+            newRows.append(row)
+            return newRows
         }
     }
 }
