@@ -41,8 +41,13 @@ Mixer can be passed a `MixerConfiguration` object where you can specify another 
 
 Pass the bundle to initialize. Mixer will look up the `Colors` file in the bundle and cache it for subsequent initializations in the same process:
 
-```Swift
+```Swift 2.x
 let bundle = NSBundle(forClass: self.dynamicType)
+let mixer = Mixer(bundle: bundle)
+```
+
+```Swift 3.0+
+let bundle = Bundle(for: type(of: self)
 let mixer = Mixer(bundle: bundle)
 ```
 

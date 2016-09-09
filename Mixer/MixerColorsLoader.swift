@@ -1,7 +1,7 @@
 import UIKit
 
 internal class MixerColorsLoader {
-    private static var cachedPaths: [String: Mixer.Colors] = [:]
+    fileprivate static var cachedPaths: [String: Mixer.Colors] = [:]
     
     let path: String
     
@@ -10,14 +10,14 @@ internal class MixerColorsLoader {
     }
     
     func clear() {
-        MixerColorsLoader.cachedPaths.removeValueForKey(path)
+        MixerColorsLoader.cachedPaths.removeValue(forKey: path)
     }
     
     
     func load() -> Mixer.Colors? {
         if let cached = MixerColorsLoader.cachedPaths[path] { return cached }
         
-        guard let csv = CSV(contentsOfFile: path) where !csv.rows.isEmpty else {
+        guard let csv = CSV(contentsOfFile: path) , !csv.rows.isEmpty else {
             logReadFailure("Could not find or read colors csv")
             return nil
         }
@@ -30,14 +30,14 @@ internal class MixerColorsLoader {
         return nil
     }
     
-    private func loadColors(csv: CSV) -> Mixer.Colors? {
+    fileprivate func loadColors(_ csv: CSV) -> Mixer.Colors? {
         var colors = Mixer.Colors()
         for row in csv.rows {
             guard let name = row["Name"],
-                red = extractColorValue(row, channel: "Red"),
-                green = extractColorValue(row, channel: "Green"),
-                blue = extractColorValue(row, channel: "Blue"),
-                alpha = extractAlphaValue(row) else {
+                let red = extractColorValue(row, channel: "Red"),
+                let green = extractColorValue(row, channel: "Green"),
+                let blue = extractColorValue(row, channel: "Blue"),
+                let alpha = extractAlphaValue(row) else {
                     return nil
             }
             
@@ -47,7 +47,7 @@ internal class MixerColorsLoader {
         return colors
     }
     
-    private func extractColorValue(row: [String: String], channel: String) -> Int? {
+    fileprivate func extractColorValue(_ row: [String: String], channel: String) -> Int? {
         guard let string = row[channel] else {
             logReadFailureForRow(row, message: "Value for \(channel) channel not found")
             return nil
@@ -63,7 +63,7 @@ internal class MixerColorsLoader {
         return value
     }
     
-    private func extractAlphaValue(row: [String: String]) -> Float? {
+    fileprivate func extractAlphaValue(_ row: [String: String]) -> Float? {
         guard let string = row["Alpha"] else {
             logReadFailureForRow(row, message: "Value for alpha channel not found")
             return nil
@@ -79,19 +79,19 @@ internal class MixerColorsLoader {
         return value
     }
     
-    private func isValidColorValue(value: Int) -> Bool {
+    fileprivate func isValidColorValue(_ value: Int) -> Bool {
         return (0..<256).contains(value)
     }
     
-    private func isValidAlphaValue(value: Float) -> Bool {
+    fileprivate func isValidAlphaValue(_ value: Float) -> Bool {
         return (0.0..<1.0).contains(value) || value == 1.0
     }
 
-    private func logReadFailureForRow(row: [String: String], message: String) {
+    fileprivate func logReadFailureForRow(_ row: [String: String], message: String) {
         NSLog("Mixer: Failure parsing color \"\(row["Name"] ?? "")\" - \(message) - colors will not be loaded")
     }
     
-    private func logReadFailure(message: String) {
+    fileprivate func logReadFailure(_ message: String) {
         NSLog("Mixer: \(message) - colors will not be loaded")
     }
 }
