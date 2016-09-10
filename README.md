@@ -7,15 +7,17 @@ Centralize your color definitions in a CSV file & easily share them for people t
 Add the following your Cartfile:
 
 ```Swift
-github "ios-studio/Mixer" ~> 0.1.2
+github "ios-studio/Mixer" ~> 0.2
 ```
 
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
 
 ```ruby
-pod "Mixer", "~> 0.1.2"
+pod "Mixer", "~> 0.2"
 ```
+
+Mixer uses Swift 3.0+. For compatibility with Swift 2.3 use version 1.2.1.
 
 ## Default Setup
 Mixer will look for a file named `Colors.csv` in the specified bundle or at the specified path. [The contents of the file should look like this](https://github.com/ios-studio/Mixer/blob/master/MixerTests/Support/Colors.csv). It is important to keep the headers as shown, otherwise Mixer will not be able to read the file.
