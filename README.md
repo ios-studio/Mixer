@@ -7,14 +7,14 @@ Centralize your color definitions in a CSV file & easily share them for people t
 Add the following your Cartfile:
 
 ```Swift
-github "ios-studio/Mixer" ~> 0.1.1
+github "ios-studio/Mixer" ~> 0.1.2
 ```
 
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
 
 ```ruby
-pod "Mixer", "~> 0.1.1"
+pod "Mixer", "~> 0.1.2"
 ```
 
 ## Default Setup
