@@ -112,6 +112,6 @@ class MixerColorsLoaderTests: XCTestCase {
     }
     
     private func csvPath(fileName: String) -> String {
-        return NSBundle(forClass: self.dynamicType).pathForResource(fileName, ofType: "csv") ?? ""
+        return NSBundle(forClass: self.classForCoder).pathForResource(fileName, ofType: "csv") ?? ""
     }
 }
