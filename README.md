@@ -6,6 +6,12 @@ Centralize your color definitions in a CSV file & easily share them for people t
 #### Via [Carthage](https://github.com/Carthage/Carthage):
 Add the following your Cartfile:
 
+For Swift 3:
+```Swift
+github "ios-studio/Mixer" ~> 1.0.0
+```
+
+For Swift 2.x:
 ```Swift
 github "ios-studio/Mixer" ~> 0.1.2
 ```
@@ -13,6 +19,12 @@ github "ios-studio/Mixer" ~> 0.1.2
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
 
+For Swift 3:
+```ruby
+pod "Mixer", "~> 1.0.0"
+```
+
+For Swift 2.x:
 ```ruby
 pod "Mixer", "~> 0.1.2"
 ```
@@ -42,7 +54,7 @@ Mixer can be passed a `MixerConfiguration` object where you can specify another 
 Pass the bundle to initialize. Mixer will look up the `Colors` file in the bundle and cache it for subsequent initializations in the same process:
 
 ```Swift
-let bundle = NSBundle(forClass: self.dynamicType)
+let bundle = Bundle(forClass: self.dynamicType)
 let mixer = Mixer(bundle: bundle)
 ```
 

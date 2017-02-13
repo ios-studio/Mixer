@@ -5,10 +5,10 @@ import Nimble
 
 class MixerColorsLoaderTests: XCTestCase {
     
-    var fileManager: NSFileManager!
+    var fileManager: FileManager!
     
     override func setUp() {
-        fileManager = NSFileManager.defaultManager()
+        fileManager = FileManager.default
     }
     
     override func tearDown() {
@@ -32,10 +32,10 @@ class MixerColorsLoaderTests: XCTestCase {
         expect(deletedResult).to(beNil())
     }
     
-    private func copyCSVFixtureToTestPath(path: String) -> String {
-        let newPath = path.stringByReplacingOccurrencesOfString("Colors", withString: "CorrectFontSizes-CacheTest")
+    fileprivate func copyCSVFixtureToTestPath(_ path: String) -> String {
+        let newPath = path.replacingOccurrences(of: "Colors", with: "CorrectFontSizes-CacheTest")
         do {
-            try fileManager.copyItemAtPath(path, toPath: newPath)
+            try fileManager.copyItem(atPath: path, toPath: newPath)
         } catch _ {
             fail("Could not copy file for cache test")
         }
@@ -43,9 +43,9 @@ class MixerColorsLoaderTests: XCTestCase {
         return newPath
     }
     
-    private func removeCSVFixtureAtPath(path: String) {
+    fileprivate func removeCSVFixtureAtPath(_ path: String) {
         do {
-            try fileManager.removeItemAtPath(path)
+            try fileManager.removeItem(atPath: path)
         } catch _ {
             fail("Could not remove file for cache test")
         }
@@ -111,7 +111,7 @@ class MixerColorsLoaderTests: XCTestCase {
         expect(colors).to(beNil())
     }
     
-    private func csvPath(fileName: String) -> String {
-        return NSBundle(forClass: self.classForCoder).pathForResource(fileName, ofType: "csv") ?? ""
+    fileprivate func csvPath(_ fileName: String) -> String {
+        return Bundle(for: self.classForCoder).path(forResource: fileName, ofType: "csv") ?? ""
     }
 }

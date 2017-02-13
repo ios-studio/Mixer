@@ -18,7 +18,7 @@ class MixerTests: XCTestCase {
         
         continueAfterFailure = false
         
-        guard let csvPath = NSBundle(forClass: self.dynamicType).pathForResource("Colors", ofType: "csv") else {
+        guard let csvPath = Bundle(for: type(of: self)).path(forResource: "Colors", ofType: "csv") else {
             fail("Color fixture file Colors.csv is missing")
             return
         }
@@ -34,19 +34,19 @@ class MixerTests: XCTestCase {
     }
     
     func testConvenienceInit() {
-        let convenienceMixer = Mixer(bundle: NSBundle(forClass: self.dynamicType))
+        let convenienceMixer = Mixer(bundle: Bundle(for: type(of: self)))
         expect(convenienceMixer.hasColors).to(beTrue())
     }
     
     func testConvenienceInitWithMissingFile() {
-        let convenienceMixer = Mixer(bundle: NSBundle())
+        let convenienceMixer = Mixer(bundle: Bundle())
         expect(convenienceMixer.hasColors).to(beFalse())
     }
     
     func testConvenienceInitPerformance() {
-        self.measureBlock {
+        self.measure {
             for _ in 1..<10000 {
-                let _ = Mixer(bundle: NSBundle(forClass: self.dynamicType))
+                let _ = Mixer(bundle: Bundle(for: type(of: self)))
             }
         }
     }
@@ -71,7 +71,7 @@ class MixerTests: XCTestCase {
         expect(alpha).to(beCloseTo(0.9, within: 0.001))
     }
     
-    private func extractColorValues(color: UIColor?) -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+    fileprivate func extractColorValues(_ color: UIColor?) -> (CGFloat, CGFloat, CGFloat, CGFloat) {
         var red: CGFloat = -1.0
         var green: CGFloat = -1.0
         var blue: CGFloat = -1.0
