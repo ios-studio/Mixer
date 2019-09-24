@@ -6,6 +6,11 @@ Centralize your color definitions in a CSV file & easily share them for people t
 #### Via [Carthage](https://github.com/Carthage/Carthage):
 Add the following your Cartfile:
 
+For Swift 5:
+```Swift
+github "ios-studio/Mixer" ~> 1.1.0
+```
+
 For Swift 3:
 ```Swift
 github "ios-studio/Mixer" ~> 1.0.0
@@ -18,6 +23,11 @@ github "ios-studio/Mixer" ~> 0.1.2
 
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
+
+For Swift 5:
+```ruby
+pod "Mixer", "~> 1.1.0"
+```
 
 For Swift 3:
 ```ruby
